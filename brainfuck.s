@@ -20,7 +20,7 @@ main:
     jne     wrong_args 
 
     movq    8(%rsi), %rdi
-	call    read_file
+    call    read_file
 
     cmpq    $0, %rax
     jle     fail
@@ -102,7 +102,6 @@ output_byte:
     pushq   %rsi
 
     movzbq  (%rsi), %rdi
-    
     call    putchar
 
     popq    %rsi
@@ -119,7 +118,6 @@ input_byte:
     subq    $16, %rsp        
     movq    $0, %rdi
     leaq    (%rsp), %rsi
-
     syscall
 
     movb    (%rsp), %cl
